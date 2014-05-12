@@ -1,0 +1,13 @@
+<h1>Drunks</h1>
+
+<ul>
+<% @people.each do |p| %>
+      <%= link_to person_path p do %>
+      <li>
+        <strong><%= p.name %> - <%= p.age %></strong>
+      <% end %>
+      </li>
+<% end %>
+</ul>
+
+<%= link_to "Add Your Hangover Cure!", new_cure_path(@cure) %>
