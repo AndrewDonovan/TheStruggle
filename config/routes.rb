@@ -1,4 +1,6 @@
 TheStruggle::Application.routes.draw do
+  resource :sessions, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create]
   resources :people
   resources :cures
 

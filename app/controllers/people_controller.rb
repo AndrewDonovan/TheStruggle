@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-	before_action :set_person, only: [:edit, :update, :show, :destroy]
+	before_action :authenticate_user, :set_person, only: [:edit, :update, :show, :destroy]
 		
 	def index
 		@people = Person.all
