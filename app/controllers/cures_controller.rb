@@ -6,12 +6,16 @@ class CuresController < ApplicationController
 		@people = Person.all
 	end
 
+	def all
+		@cures = Cure.all
+	end
+
 	def new
 		@cure = Cure.new
 	end
 
 	def create
-		@cure = Cure.new(params.require(:cure).permit(:item, :amount, :order, :lastnight))
+		@cure = Cure.new(params.require(:cure).permit(:item, :amount, :order, :lastnight, :image))
 		if @cure.save
 			redirect_to cures_path
 		else
@@ -29,7 +33,7 @@ class CuresController < ApplicationController
 	end
 
 	def update
-		if @cure.update_attributes(params.require(:cure).permit(:item, :amount, :order, :lastnight))
+		if @cure.update_attributes(params.require(:cure).permit(:item, :amount, :order, :lastnight, :image))
 			redirect_to cures_path
 		else
 			render 'edit'

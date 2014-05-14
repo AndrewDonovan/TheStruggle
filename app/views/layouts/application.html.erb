@@ -17,23 +17,33 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">The Struggle Is Real</a>
+          <%= link_to "The Struggle Is Real", cures_path, class:"navbar-brand" %>
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "List Of Cures", cures_path %></li>
-        <li><%= link_to "Post Your Struggle", new_cure_path %></li>
+        <li><%= link_to "Users", people_path %></li>
+        <li><%= link_to "Post Your Struggle", "#" %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Sign Up", new_user_path %></li>
+          <% if !current_user %>
+        <li><%= link_to "Sign Up", new_person_path %></li>
         <li><%= link_to "Sign In", new_sessions_path %></li>
+        <% else %>
+          <li>Hello, <%= current_user.name %></li>
+          <li><%= link_to "Sign Out", sessions_path, :method => :delete %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container-fluid">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+
   <%= yield %>
 </div>
 <div class = "background"> </div>
