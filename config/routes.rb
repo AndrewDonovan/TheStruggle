@@ -4,9 +4,24 @@ TheStruggle::Application.routes.draw do
     resources :cures
   end
 
-get "/cures" => 'cures#all', as: :cures
+
+
+
+get "/cures" => 'cures#index', as: :cures
 
 post '/person/:id/cures' => 'cures#create'
+
+get '/person/:id/cures/:id' => 'cures#show'
+
+get '/cure/:id/' => 'cure#show'
+
+
+
+
+
+
+
+
 
 
   # get '/people/:id/' => 'person#show'
@@ -20,7 +35,7 @@ post '/person/:id/cures' => 'cures#create'
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-    root 'cures#all'
+    root 'cures#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

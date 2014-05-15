@@ -1,5 +1,3 @@
-
-<% @cures.each do |cure| %>
  Item: <%= cure.item %><br>
  How Much: <%= cure.amount %><br>
  What Order: <%= cure.order %><br>
@@ -7,10 +5,3 @@
 
  <% if cure.image_file_name %>
  <%= image_tag cure.image.url %><br>
-<% end %>
-
- <br>
- <br>
-<% end %>
-
-

@@ -16,7 +16,7 @@ class CuresController < ApplicationController
 	end
 
 	def create
-		@cure = Cure.new(params.require(:cure).permit(:item, :amount, :order, :lastnight, :image))
+		@cure = current_user.cures.new(params.require(:cure).permit(:item, :amount, :order, :lastnight, :image))
 		if @cure.save
 			redirect_to person_cures_path
 		else
@@ -29,7 +29,7 @@ class CuresController < ApplicationController
 	end
 
 	def edit
-		@cure = Cure.find(prams[:id])
+		@cure = Cure.find(params[:id])
 		@people = Person.all
 	end
 

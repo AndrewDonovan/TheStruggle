@@ -7,4 +7,11 @@
   <strong>Age:</strong>
       <%= @person.age %>
 
+  <strong>Drink Of Choice:</strong>
+      <%= @person.drink %>
 
+<% @person.cures.each do |c| %>
+
+<%= c.item %>
+
+<% end %>

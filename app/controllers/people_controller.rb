@@ -10,9 +10,10 @@ class PeopleController < ApplicationController
 	end
 
 	def create
-		@person = Person.new(params.require(:person).permit(:name, :email, :age, :password))
+		@person = Person.new(params.require(:person).permit(:name, :email, :age, :password, :drink))
 		if @person.save
-			redirect_to people_path
+		flash[:success] = "You have signed up successfully"
+			redirect_to :root
 		else
 			render 'new'
 		end
@@ -25,7 +26,7 @@ class PeopleController < ApplicationController
 	end
 
 	def update
-		if @person.update_attributes(params.require(:person).permit(:name, :email, :age))
+		if @person.update_attributes(params.require(:person).permit(:name, :email, :age, :password, :drink))
 			redirect_to people_path
 		else
 			render 'edit'
