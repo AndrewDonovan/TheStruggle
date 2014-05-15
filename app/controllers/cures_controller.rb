@@ -12,12 +12,13 @@ class CuresController < ApplicationController
 
 	def new
 		@cure = Cure.new
+		@person = Person.find(params[:person_id])
 	end
 
 	def create
 		@cure = Cure.new(params.require(:cure).permit(:item, :amount, :order, :lastnight, :image))
 		if @cure.save
-			redirect_to cures_path
+			redirect_to person_cures_path
 		else
 			render 'new'
 		end

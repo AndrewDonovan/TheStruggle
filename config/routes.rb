@@ -6,6 +6,7 @@ TheStruggle::Application.routes.draw do
 
 get "/cures" => 'cures#all', as: :cures
 
+post '/person/:id/cures' => 'cures#create'
 
 
   # get '/people/:id/' => 'person#show'
@@ -19,7 +20,7 @@ get "/cures" => 'cures#all', as: :cures
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-    root 'cures#index'
+    root 'cures#all'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

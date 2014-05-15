@@ -25,7 +25,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to "Users", people_path %></li>
-        <li><%= link_to "Post Your Struggle", "#" %></li>
+          <% if current_user %>
+        <li><%= link_to "Post Your Struggle", new_person_cure_path(current_user) %></li>
+           <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <% if !current_user %>

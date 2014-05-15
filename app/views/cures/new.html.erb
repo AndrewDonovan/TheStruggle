@@ -1,6 +1,6 @@
 <h1>What's Your Cure?</h1>
 
-<%= form_for @cure do |f| %>
+<%= form_for [@person, @cure] do |f| %>
 	Item: <%= f.text_field :item %><br />
 	Amount: <%= f.text_field :amount %><br />
 	Order: <%= f.text_field :order %><br />
