@@ -1,6 +1,5 @@
-<h1>Your Hung Over Friends:</h1>
-
-<ul>
+<h2>Your Hung Over Friends:</h2>
+<h3>
 <% @people.each do |p| %>
       <%= link_to person_path p do %>
       <li>
@@ -8,8 +7,7 @@
       <% end %>
       </li>
 <% end %>
-</ul>
-
+</h3>
 
 <%= link_to "Not a user? Join the hung over community HERE", new_person_path(@person) %>
 

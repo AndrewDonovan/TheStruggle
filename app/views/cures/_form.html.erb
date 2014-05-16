@@ -1,12 +1,20 @@
-<%= form_for [@person, @cure] do |f| %>
-  Item: <%= f.text_field :item %><br />
-  Amount: <%= f.text_field :amount %><br />
-  Order: <%= f.text_field :order %><br />
-  Last Night: <%= f.text_field :lastnight %><br />
-  <br />
-  <%= f.submit %>
-<% end %>
+<div class='row'>
 
-<%= link_to 'Delete This Cure?', person_cure_path, method: :delete, data: { confirm: "Are you sure!?"} %>
+	<div class="col-md-5 col-md-offset-3">
+		<%= form_for [@person, @cure] do |f| %>
+			<fieldset class="form-group">
+				<%= f.label :item, 'What Happened Last Night?' %>
+				<%= f.text_field :item, class: "form-control" %>		
+			</fieldset>		
+			<fieldset class="form-group">
+				<%= f.label :lastnight, 'What Is Your Hang Over Cure?' %>
+				<%= f.text_field :lastnight, class: "form-control" %>		
+			</fieldset>
 
+			Show Your Struggle: <%= f.file_field :image, class: 'form-control' %> 
 
+			<%= f.submit %>
+		<% end %>
+	</div>
+
+</div>

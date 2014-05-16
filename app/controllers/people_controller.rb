@@ -43,5 +43,4 @@ class PeopleController < ApplicationController
 		def set_person
 			@person = Person.find(params[:id])
 		end
-		
 end

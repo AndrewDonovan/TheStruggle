@@ -1,16 +1,15 @@
 
 <% @cures.each do |cure| %>
- Item: <%= cure.item %><br>
- How Much: <%= cure.amount %><br>
- What Order: <%= cure.order %><br>
- What Happened Last Night: <%= cure.lastnight %><br>
+ <h4>What Happened Last Night:</h4> <%= cure.item %><br>
+
+ <h4>The Cure:</h4> <%= cure.lastnight %><br>
 
  <% if cure.image_file_name %>
  <%= image_tag cure.image.url, class: "picture" %><br>
 <% end %>
 
+
  <br>
  <br>
 <% end %>
-
 
