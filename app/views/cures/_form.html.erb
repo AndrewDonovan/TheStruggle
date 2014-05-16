@@ -1,5 +1,12 @@
-<%= form_for @cure do |f| %>
-  Name: <%= f.text_field :name %><br />
+<%= form_for [@person, @cure] do |f| %>
+  Item: <%= f.text_field :item %><br />
+  Amount: <%= f.text_field :amount %><br />
+  Order: <%= f.text_field :order %><br />
+  Last Night: <%= f.text_field :lastnight %><br />
   <br />
   <%= f.submit %>
 <% end %>
+
+<%= link_to 'Delete This Cure?', person_cure_path, method: :delete, data: { confirm: "Are you sure!?"} %>
+
+

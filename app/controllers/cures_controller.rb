@@ -25,12 +25,10 @@ class CuresController < ApplicationController
 	end
 
 	def show
-		@cure = Cure.find(params[:id])
 	end
 
 	def edit
-		@cure = Cure.find(params[:id])
-		@people = Person.all
+		@person = Person.find(params[:person_id])
 	end
 
 	def update
@@ -45,5 +43,9 @@ class CuresController < ApplicationController
 		@cure.destroy
 		redirect_to cures_path
 	end
+
+def set_cure
+	@cure = Cure.find(params[:id])
+end
 
 end

@@ -10,12 +10,27 @@
   <strong>Drink Of Choice:</strong>
       <%= @person.drink %>
 
+<br>
 <% @person.cures.each do |c| %>
-
-<%= c.item %>
+<br>
+<strong><%= c.item %></strong>
+<br>
 <%= c.amount %>
+<br>
 <%= c.order %>
+<br>
 <%= c.lastnight %>
+<br>
 <%= c.image %>
+<br>
+
+<%= link_to "Edit This Cure", edit_person_cure_path(@person, c) %>
+<br>
+<%= link_to 'Delete This Cure?', person_cure_path(@person, c), method: :delete, data: { confirm: "Are you sure!?"} %>
+
 
 <% end %>
+
+<br>
+<br>
+<%= link_to "Edit Your Profile", edit_person_path %>
