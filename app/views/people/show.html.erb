@@ -23,6 +23,7 @@
 <br>
     
 
+<% if current_user.id == @person.id %>
 
 <%= link_to "Edit This Cure", edit_person_cure_path(@person, c) %>
 <br>
@@ -32,5 +33,6 @@
 <%= link_to "Edit Your Profile", edit_person_path %>
 
 <br>
+<% end %>
 <% end %>
 
