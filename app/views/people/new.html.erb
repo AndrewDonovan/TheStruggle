@@ -1,11 +1,31 @@
-<h1>Join!</h1>
 
-<%= form_for @person do |f| %>
-	Name: <%= f.text_field :name %><br />
-	E-Mail: <%= f.text_field :email %><br />
-	Password: <%= f.password_field :password %><br/>
-	Age: <%= f.text_field :age %><br />
-	Drink Of Choice: <%= f.text_field :drink %><br />
-	<br />
-	<%= f.submit "Create User"%>
-<% end %>
+
+<div class='row'>
+	<div class="col-md-5 col-md-offset-3">
+		<%= form_for @person do |f| %>
+			<fieldset class="form-group">
+				<%= f.label :name, 'Name' %>
+				<%= f.text_field :name, class: "form-control" %>		
+			</fieldset>		
+			<fieldset class="form-group">
+				<%= f.label :email, 'E-Mail' %>
+				<%= f.text_field :email, class: "form-control" %>		
+			</fieldset>			
+			<fieldset class="form-group">
+				<%= f.label :password, 'Password' %>
+				<%= f.password_field :password, class: "form-control" %>		
+			</fieldset>	
+			<fieldset class="form-group">
+				<%= f.label :age, 'E-Mail' %>
+				<%= f.text_field :age, class: "form-control" %>		
+			</fieldset>	
+			<fieldset class="form-group">
+				<%= f.label :drink, 'Drink Of Choice' %>
+				<%= f.text_field :drink, class: "form-control" %>		
+			</fieldset>
+
+			<%= f.submit "Join" %>
+		<% end %>
+	</div>
+
+</div>

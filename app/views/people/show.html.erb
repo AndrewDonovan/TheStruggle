@@ -18,21 +18,29 @@
 <%= c.lastnight %>
 <br>
 
+
+
+ <% if c.image_file_name %>
  <%= image_tag c.image, class: "picture" %><br>
+ <% end %>
 <br>
     
 
-<% if current_user == @person.id %>
+
+
+<% if current_user.id == @person.id %>
 
 <%= link_to "Edit This Cure", edit_person_cure_path(@person, c) %>
 <br>
 <%= link_to 'Delete This Cure?', person_cure_path(@person, c), method: :delete, data: { confirm: "Are you sure!?"} %>
 
-<% end %>
 
-
-<% end %>
-
-<br>
-<br>
 <%= link_to "Edit Your Profile", edit_person_path %>
+
+<% end %>
+
+
+<% end %>
+
+<br>
+<br>
