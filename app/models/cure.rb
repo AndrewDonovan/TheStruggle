@@ -1,6 +1,7 @@
 class Cure
   include Mongoid::Document
   include Mongoid::Paperclip
+  include Mongoid::Timestamps
   field :item, type: String
   field :amount, type: String
   field :order, type: String
@@ -14,3 +15,4 @@ class Cure
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 end
+

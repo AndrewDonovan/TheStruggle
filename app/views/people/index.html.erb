@@ -2,10 +2,10 @@
 <h3>
 <% @people.each do |p| %>
       <%= link_to person_path p do %>
-      <li>
+      <ul>
         <strong><%= p.name %></strong>
       <% end %>
-      </li>
+      </ul>
 <% end %>
 </h3>
 
