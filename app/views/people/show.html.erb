@@ -3,9 +3,6 @@
 
   <strong>E-Mail:</strong>
       <%= @person.email %>
-      
-  <strong>Age:</strong>
-      <%= @person.age %>
 
   <strong>Drink Of Choice:</strong>
       <%= @person.drink %>
@@ -33,14 +30,11 @@
 <%= link_to "Edit This Cure", edit_person_cure_path(@person, c) %>
 <br>
 <%= link_to 'Delete This Cure?', person_cure_path(@person, c), method: :delete, data: { confirm: "Are you sure!?"} %>
-
+<br>
 
 <%= link_to "Edit Your Profile", edit_person_path %>
 
+<br>
+<% end %>
 <% end %>
 
-
-<% end %>
-
-<br>
-<br>

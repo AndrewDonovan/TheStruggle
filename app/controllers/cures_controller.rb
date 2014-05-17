@@ -2,7 +2,7 @@ class CuresController < ApplicationController
 	before_action :set_cure, only: [:edit, :update, :show, :destroy]
 		
 	def index
-		@cures = Cure.all
+		@cures = Cure.all.reverse
 		@people = Person.all
 	end
 
@@ -25,6 +25,7 @@ class CuresController < ApplicationController
 	end
 
 	def show
+		@cures = Cure.all
 	end
 
 	def edit
