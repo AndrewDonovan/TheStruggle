@@ -6,9 +6,12 @@
 
  <% if cure.image_file_name %>
  <%= image_tag cure.image.url, class: "picture" %><br>
+
+
+
 <% end %>
+<%= "Posted by " + cure.person.name + " " + distance_of_time_in_words_to_now(cure.created_at) + " ago" %>
 
  <br>
  <br>
 <% end %>
-
